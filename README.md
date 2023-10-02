@@ -12,5 +12,8 @@ The simulation is rendered to the console so training can be easily visualized.
 * docker run --gpus all -it --rm -v /mnt/d/dev/think_tanks:/app think_tanks bash
 * python3 train.py
 
+### Demo ###
+https://github.com/Jaromc/think_tanks/assets/89912906/89642ffd-1ec9-4e68-9bdd-2e001966b824
+
 ### References ###
 * https://subscription.packtpub.com/book/data/9781786462169/11/ch11lvl1sec84/working-with-a-genetic-algorithm
