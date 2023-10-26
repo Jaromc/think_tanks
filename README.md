@@ -19,5 +19,8 @@ Nvidia 3060 12GB
 ### Demo ###
 https://github.com/Jaromc/think_tanks/assets/89912906/89642ffd-1ec9-4e68-9bdd-2e001966b824
 
+### Learning Rate ###
+![score_graph](https://github.com/Jaromc/think_tanks/assets/89912906/3f1bc60f-0f04-40cf-a012-650ea9c9da4f)
+
 ### References ###
 * https://subscription.packtpub.com/book/data/9781786462169/11/ch11lvl1sec84/working-with-a-genetic-algorithm
