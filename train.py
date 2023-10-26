@@ -6,6 +6,7 @@ import math
 import sys
 from datetime import datetime
 from curses import wrapper
+import pandas as pd
 
 pop_size = 20
 selection = 0.2
@@ -347,6 +348,12 @@ def run_simulation(screen, population, num_targets, area_x, area_y, generation):
 def main(screen):
    screen.resize(250, 250)
    brains = []
+   
+   colnames = []
+   for i in range(pop_size):
+      colnames.append(str(i))
+   training_report = pd.DataFrame(columns=colnames)
+   
    #create the initial set of models
    for i in range(pop_size):
       brains.append(Brain(neurons_per_layer))
@@ -356,6 +363,10 @@ def main(screen):
    for i in range(generations):
       population_fitness = run_simulation(screen, brains, num_targets, area_x, area_y, i)
       top_vals, top_ind = tf.nn.top_k(population_fitness, k=pop_size)
+
+      training_report.loc[i] = population_fitness
+      if (i % 10) == 0:
+         training_report.to_csv(str(i)+".csv", index=False)
 
       #generate new layers using the fittest individuals
       brains = generate_new_dense_layer(brains, top_ind, 1, neurons_per_layer, 0)
