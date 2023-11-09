@@ -47,7 +47,7 @@ class Brain:
       #It has 2 outputs representing the movement required to each tank track
       layer_a = tf.keras.layers.Dense(neurons_per_layer, activation='relu', input_shape=[1])
       layer_b = tf.keras.layers.Dense(neurons_per_layer, activation='relu')
-      layer_c = tf.keras.layers.Dense(neurons_per_layer, activation='relu')
+      layer_c = tf.keras.layers.Dense(neurons_per_layer, activation='sigmoid')
       output_layer = tf.keras.layers.Dense(2)
 
       self.model = tf.keras.models.Sequential()
